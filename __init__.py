@@ -73,7 +73,7 @@ numpydtypes = {
     np.uint64: "aa_dump_numpy_uint64",
     np.float32: "aa_dump_numpy_float32",
     np.float64: "aa_dump_numpy_float64",
-    np.string_: "aa_dump_numpy_uint8",
+    np.bytes_: "aa_dump_numpy_uint8",
 }
 
 
@@ -873,7 +873,7 @@ def observe_all_values(
     ),
 ):
     isstring = False
-    if dty == np.string_:
+    if dty == np.bytes_:
         isstring = True
         dty = np.uint8
     check_differences = [numpydtypes[dty]]
